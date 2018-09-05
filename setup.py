@@ -5,8 +5,6 @@ import re
 
 from setuptools import setup
 
-PACKAGE_NAME = 'py_boilerplate'
-
 with io.open('README.rst', 'rt', encoding='utf8') as f:
     readme = f.read()
 
@@ -14,7 +12,7 @@ with io.open('py_boilerplate/__init__.py', 'rt', encoding='utf8') as f:
     version = re.search(r'__version__ = \'(.*?)\'', f.read()).group(1)
 
 setup(
-    name=PACKAGE_NAME,
+    name='py_boilerplate',
     version=version,
     url='https://github.com/o-hayato/py_boilerplate',
     license='MIT',
@@ -22,6 +20,7 @@ setup(
     author_email='preasper0+github@gmail.com',
     description='python boilerplate',
     long_description=readme,
+    packages=['py_boilerplate'],
     include_package_data=True,
     zip_safe=False,
     platforms='any',
@@ -43,9 +42,10 @@ setup(
             'sphinxcontrib-log-cabinet',
         ]
     },
-    entry_points='''
-        [console_scripts]
-        {pkg}={pkg}.cli:main
-    '''.format(pkg=PACKAGE_NAME),
+    entry_points={
+        'console_scripts': [
+            'py_boilerplate = py_boilerplate.cli:main',
+        ],
+    },
 
 )
