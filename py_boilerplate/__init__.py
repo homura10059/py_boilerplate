@@ -5,7 +5,8 @@
     description
 """
 
-__version__ = '0.0.1'
 
 from .core import add
 __all__ = ['add']
+
+VERSION = "0.1.0"
