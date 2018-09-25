@@ -65,14 +65,6 @@ Usage
     inv relese
     ```
 
-Install
--------
-
-```sh
-git clone http://121.94.80.48/computing-opt/computing-construction.git
-bundle install
-```
-
 Contributing
 ------------
 
